@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  haxroomie:
+    image: aon22/haxball
+    network_mode: host
+    volumes:
+    - path/to/config:/config
+    stdin_open: true
+    tty: true

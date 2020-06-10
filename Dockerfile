@@ -1,5 +1,10 @@
 FROM alpine:3.8
 
+# set environment variables
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV CHROME_BIN=/usr/bin/chromium-browser
+ENV CHROME_PATH=/usr/lib/chromium/
+
 # install chromium and its dependencies
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories \
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
@@ -18,10 +23,6 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositorie
     && rm -rf /var/cache/* \
     && mkdir /var/cache/apk
 
-# set environment variables
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-ENV CHROME_BIN=/usr/bin/chromium-browser
-ENV CHROME_PATH=/usr/lib/chromium/
 
 # set config volume
 VOLUME /config
@@ -30,4 +31,4 @@ VOLUME /config
 RUN npm install haxroomie-cli -g
 
 # start haxroomie-cli
-CMD haxroomie-cli -e $CHROME_BIN --no-sandbox -c /config/config.js
+ENTRYPOINT haxroomie-cli -e $CHROME_BIN --no-sandbox -c /config/config.js
