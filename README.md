@@ -1,5 +1,5 @@
 # Haxball headless server with Docker
-This is a simple container that runs [haxroomie-cli](https://github.com/morko/haxroomie) and starts as many rooms as you want given the appropriate config.js file. It's based on Alpine, so it's as lightweight as possible, and it's multi-arch, supporting amd64, armv7 and arm64.
+This is a simple container that runs [haxroomie-cli](https://github.com/morko/haxroomie) and starts as many rooms as you want given the appropriate config.js file. It's based on Alpine, so it's as lightweight as possible, and it's multi-arch, supporting amd64 and arm64.
 
 # Usage
 First you'll need to generate a haxball token https://www.haxball.com/headlesstoken.
