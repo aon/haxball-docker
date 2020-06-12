@@ -1,4 +1,4 @@
-FROM alpine:arm32v7-3.8
+FROM alpine:arm64v8-3.8
 COPY qemu-aarch64-static /usr/bin/
 
 # install chromium and its dependencies
