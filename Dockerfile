@@ -30,4 +30,4 @@ VOLUME /config
 RUN npm install haxroomie-cli -g
 
 # start haxroomie-cli
-CMD haxroomie-cli -e $CHROME_BIN --no-sandbox -c /config/config.js
+ENTRYPOINT haxroomie-cli -e $CHROME_BIN --no-sandbox -c /config/config.js
