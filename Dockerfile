@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:amd64-3.8
 
 # install chromium and its dependencies
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories \
